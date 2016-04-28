@@ -32,6 +32,7 @@ import javax.faces.render.RenderKit;
 import javax.faces.render.RenderKitFactory;
 import javax.faces.render.Renderer;
 import javax.faces.render.ResponseStateManager;
+import org.primefaces.renderkit.PrimeRendererWrapper;
 
 public class MobileRenderKit extends RenderKit {
 
@@ -70,7 +71,11 @@ public class MobileRenderKit extends RenderKit {
         if(renderer == null) {
             renderer = getDefaultRenderKit().getRenderer(family, rendererType);
         }
-        
+
+        if (renderer != null && !(renderer instanceof PrimeRendererWrapper)) {
+            renderer = new PrimeRendererWrapper(renderer);
+        }
+
         return renderer;
     }
     

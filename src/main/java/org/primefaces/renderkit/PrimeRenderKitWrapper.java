@@ -32,7 +32,6 @@ public class PrimeRenderKitWrapper extends RenderKitWrapper {
         Renderer renderer = getWrapped().getRenderer(family, rendererType);
         if (renderer != null && !(renderer instanceof PrimeRendererWrapper)) {
             renderer = new PrimeRendererWrapper(renderer);
-            addRenderer(family, rendererType, renderer);
         }
         
         return renderer;

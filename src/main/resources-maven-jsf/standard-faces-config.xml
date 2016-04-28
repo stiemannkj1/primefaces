@@ -1,9 +1,13 @@
     
     <name>primefaces</name>
+    <ordering>
+        <after>
+            <others/>
+        </after>
+    </ordering>
     
     <factory>
         <partial-view-context-factory>org.primefaces.context.PrimePartialViewContextFactory</partial-view-context-factory>
-        <render-kit-factory>org.primefaces.renderkit.PrimeRenderKitFactory</render-kit-factory>
     </factory>
     
     <lifecycle>
@@ -192,6 +196,11 @@
         <converter-id>javax.faces.Number</converter-id>
         <converter-class>org.primefaces.convert.NumberConverter</converter-class>
     </converter>
+
+    <render-kit>
+        <render-kit-id>HTML_BASIC</render-kit-id>
+        <render-kit-class>org.primefaces.renderkit.PrimeRenderKitWrapper</render-kit-class>
+    </render-kit>
     
     <!-- Mobile -->
     <component>
